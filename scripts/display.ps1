@@ -4,7 +4,7 @@
 function Initialize-Console {
     Set-ConsoleColor
     [Console]::Clear() 
-    Write-Host "`nSlCacheInfo Started....`n`n"
+    Write-Host "`nProgram Launched....`n`n"
     Start-Sleep -Seconds 1
 }
 
@@ -57,9 +57,8 @@ function Display-AssetReport {
     Write-Host "`nNewest Other Assets:"
     Display-SingleFile -file $global:latestOther
 
-    Write-Host "`nRefresh In 15 Seconds..."
+    Write-Host "`nRefresh In 15 Seconds, Press M To Return To Menu..."
 }
-
 
 # Function Set Soundcachelocation
 function Set-SoundCacheLocation {
@@ -98,3 +97,4 @@ function Get-DirectorySize {
     $totalSize = (Get-ChildItem -Path $directoryPath -Recurse -File | Measure-Object -Property Length -Sum).Sum / 1MB
     return "{0:N2} MB" -f $totalSize
 }
+

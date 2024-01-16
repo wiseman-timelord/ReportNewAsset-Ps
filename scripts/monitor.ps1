@@ -1,12 +1,27 @@
 # Script: monitor.ps1
 
+# Updated monitoring function
 function Start-MonitoringAssets {
     Initialize-LatestFileNames
     Start-DirectoryMonitoring
     while ($true) {
         Display-AssetReport
-        Start-Sleep -Seconds 15
+        Start-Sleep -Seconds 15 # Reduced sleep time for more responsive key checking
+        if (Check-ForExit) {
+            break
+        }
     }
+}
+
+# Function to check for 'M' key press
+function Check-ForExit {
+    if ([console]::KeyAvailable) {
+        $key = [console]::ReadKey($true)
+        if ($key.Key -eq "M") {
+            return $true
+        }
+    }
+    return $false
 }
 
 # Function Update Latestfilename
