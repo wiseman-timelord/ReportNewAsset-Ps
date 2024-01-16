@@ -49,20 +49,20 @@ Monitoring..
 Monitoring Assets...
 
 Cache/Sound Dir:
-R:\FireStorm\Data - 4,730.31 MB
+R:\FireStorm\Data - 3,880.15 MB
 R:\FireStorm\Sound - 0.00 MB
 
 Newest Texture Assets:
-d18bed1f-bf01-0399-dc42-ae5e837010e2.texture - 0.91 KB
+8b954690-595d-c04d-86b0-469a0f14595f.texture - 159.21 KB
 
 Newest Object Assets:
 objects_851_896.slc - 3,578.44 KB
 
 Newest Sound Assets:
-No Relevantly Themed Files Exist!
+e8af4a28-aa83-4310-a7c4-c047e15ea0df.dsf - 41.04 KB
 
 Newest Other Assets:
-sl_cache_ed11ad84-e720-f4ee-351e-0afda90d90bd_0.asset - 1.89 KB
+sl_cache_74b7c4be-dbda-5d07-536c-83a0e284ca69_0.asset - 27.12 KB
 
 ----------------------------------------------------------------------
 Refresh In 15 Seconds, Press M To Return To Menu...
