@@ -9,8 +9,6 @@ function Start-MonitoringAssets {
     }
 }
 
-
-
 # Function Update Latestfilename
 function Update-LatestFileName {
     param (
@@ -29,20 +27,6 @@ function Update-LatestFileName {
         }
     }
 }
-
-
-
-# Function Display Singlefile
-function Display-SingleFile {
-    param ([System.IO.FileInfo]$file)
-    if ($file) {
-        $size = "{0:N2} KB" -f ($file.Length / 1KB)
-        "$($file.Name) - $size"
-    } else {
-        "No Relevantly Themed Files Exist!"
-    }
-}
-
 
 # Function Start Filesystemwatcher
 function Start-FileSystemWatcher {
@@ -64,32 +48,6 @@ function Start-FileSystemWatcher {
     }
 }
 
-
-# Function Display Assetreport
-function Display-AssetReport {
-    Set-ConsoleColor
-    Clear-Host
-    Write-Host "`n                      -= Monitoring Assets =-"
-    Write-Host "`nCache/Sound Dir:"
-    Write-Host "$dataDir - $(Get-DirectorySize -directoryPath $dataDir)"
-    Write-Host "$soundDir - $(Get-DirectorySize -directoryPath $soundDir)"
-    
-    Write-Host "`nNewest Texture Assets:"
-    Display-SingleFile -file $global:latestTexture
-
-    Write-Host "`nNewest Object Assets:"
-    Display-SingleFile -file $global:latestObject
-
-    Write-Host "`nNewest Sound Assets:"
-    Display-SingleFile -file $global:latestSound
-
-    Write-Host "`nNewest Other Assets:"
-    Display-SingleFile -file $global:latestOther
-
-    Write-Host "`nRefresh In 15 Seconds..."
-}
-
-
 # Function Initialize Latestfilenames
 function Initialize-LatestFileNames {
     Update-LatestFileName -directory $textureDir -extension ".texture" -latestFileName "latestTexture"
@@ -98,20 +56,10 @@ function Initialize-LatestFileNames {
     Update-LatestFileName -directory $otherAssetsDir -extension ".asset" -latestFileName "latestOther"
 }
 
-
 # Function Start Directorymonitoring
 function Start-DirectoryMonitoring {
     Start-FileSystemWatcher -path $textureDir -filter "*.texture" -category "Textures"
     Start-FileSystemWatcher -path $objectDir -filter "*.slc" -category "Objects"
     Start-FileSystemWatcher -path $soundDir -filter "*.dsf" -category "Sounds"
     Start-FileSystemWatcher -path $otherAssetsDir -filter "*.asset" -category "Other"
-}
-
-# Function Get Directorysize
-function Get-DirectorySize {
-    param (
-        [string]$directoryPath
-    )
-    $totalSize = (Get-ChildItem -Path $directoryPath -Recurse -File | Measure-Object -Property Length -Sum).Sum / 1MB
-    return "{0:N2} MB" -f $totalSize
 }
