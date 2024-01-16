@@ -62,7 +62,7 @@ Refresh In 15 Seconds...
 ```
 
 ## USAGE
-1. Download the release (v0.01 For non .NET systems)
+1. Download the release (SlCacheInfo v0.01 For non .NET systems).
 2. Extract to suitable folder.
 3. Run your Second Life viewer, go to the settings and note where the cache files are stored, additionally you may wish to move the data cache, and if you have the option then set the sound cache to a separate dir too.
 4. Run `SlCacheInfo.Bat`, use the menu options 1-2 to set the loctions of the, cache and sound, folders you just noted.
