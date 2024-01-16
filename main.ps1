@@ -5,7 +5,7 @@
 . ".\scripts\display.ps1"
 
 # Variables
-$settings = Import-PowerShellDataFile ".\settings.psd1"
+$settings = Import-PowerShellDataFile ".\config\settings.psd1"
 $dataDir = $settings.DataCacheLocation
 $soundDir = $settings.SoundCacheLocation
 $objectDir = "$dataDir\objectcache"
@@ -20,7 +20,7 @@ $latestOther = $null
 
 # Function Load Settings
 function Load-Settings {
-    $settings = Import-PowerShellDataFile ".\settings.psd1"
+    $settings = Import-PowerShellDataFile ".\config\settings.psd1"
     return $settings
 }
 
