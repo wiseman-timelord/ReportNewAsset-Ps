@@ -10,7 +10,30 @@ Working on it, its going to be a quick one, done in half a day.
 - **Real-time Asset Reporting**: Displays updated information of the latest files, including names and sizes.
 
 ### PREVIEW
-First Version.
+Main Menu..
+```
+
+                      -= Report New Assets =-
+
+
+
+
+
+                    1. Set Data Cache Location
+
+                    2. Set Sound Cache Location
+
+                    3. Start Monitoring Assets
+
+
+
+
+
+
+Select, Menu Options 1-3, Exit Program=X:
+
+```
+Monitoring
 ```
 
                       -= Report New Assets =-
