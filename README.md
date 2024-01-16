@@ -11,6 +11,7 @@ SlCacheInfo is a tool to monitor for, new and updated, files in the cache of "Se
 - **Dynamic File Monitoring**: Real-time directory monitoring for new file creations using FileSystemWatcher.
 - **Automated File Tracking**: Updates and tracks the latest files in categories like Textures, Objects, Sounds, and Others.
 - **Real-time Asset Reporting**: Displays updated information of the latest files, including names and sizes.
+- **Break From Loop**: => v1.03 requires .NET => v2.0, but features a break from loop ability on monitoring page.
 
 ### PREVIEW
 Main Menu..
