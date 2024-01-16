@@ -67,7 +67,7 @@ sl_cache_4e1511a9-36fb-495c-29dd-9b28bf6be69c_0.asset - 441.19 KB
 Soon...
 
 ### NOTATION
-- After going to a few locations my 4GB ramdisk was used up even with the textures limited to 512px, then when I logged out by default sl deletes sound files, hence, SL will end up not caching sound files because other data will use the cache to the limit, you will know this has happened because the space used by the sound cache will be 0 MB, thus, most peoples use of gestures with sounds will cause net lag, as everyone must re-download the sample each time, unless they have a barmy large cache causing system lag.  
+- After going to a few locations my 4GB ramdisk was used up even with the textures limited to 512px, then when I logged out by default sl deletes sound files, hence, SL will end up not caching sound files because other data will use the cache to the limit, you will know this has happened because the space used by the, data and sound, cache will be, the maximum size you set the cache to and 0 MB, thus, under such circumstances, the user must re-download the sounds every time, which will cause lag regardless of "reasonable" cache size settins.  
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
