@@ -6,7 +6,7 @@ Working on it, its going to be a quick one, done in half a day.
 - break from monitoring loop to return to main menu.
 
 ## DESCRIPTION
-soon...
+Soon...
 
 ### FEATURES
 - **Customizable Cache Locations**: Set custom paths for different Second Life cache data types.
@@ -38,7 +38,7 @@ Main Menu..
 Select, Menu Options 1-3, Exit Program=X:
 
 ```
-Monitoring
+Monitoring..
 ```
 
                       -= Monitoring Assets =-
@@ -62,6 +62,12 @@ sl_cache_4e1511a9-36fb-495c-29dd-9b28bf6be69c_0.asset - 441.19 KB
  Refresh In 15 Seconds...
 
 ```
+
+## USAGE
+Soon...
+
+### NOTATION
+- After going to a few locations my 4GB ramdisk was used up even with the textures limited to 512px, then when I logged out by default sl deletes sound files, hence, SL will end up not caching sound files because other data will use the cache to the limit, thus, most peoples use of gestures with sounds will cause net lag, as everyone must re-download the sample each time, unless they have a barmy large cache causing system lag.  
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
