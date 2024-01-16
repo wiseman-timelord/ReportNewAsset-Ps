@@ -2,11 +2,16 @@
 
 # Function Initialize Console
 function Initialize-Console {
-    [Console]::ForegroundColor = [ConsoleColor]::White
-    [Console]::BackgroundColor = [ConsoleColor]::DarkGray
+    Set-ConsoleColor
     [Console]::Clear() 
     Write-Host "`nSlCacheInfo Started....`n`n"
     Start-Sleep -Seconds 1
+}
+
+# Function Set Consolecolor
+function Set-ConsoleColor {
+    [Console]::ForegroundColor = [ConsoleColor]::White
+    [Console]::BackgroundColor = [ConsoleColor]::DarkGray
 }
 
 # Function Show Menu

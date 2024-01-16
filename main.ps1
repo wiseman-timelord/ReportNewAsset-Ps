@@ -18,12 +18,6 @@ $latestObject = $null
 $latestSound = $null
 $latestOther = $null
 
-# Function Load Settings
-function Load-Settings {
-    $settings = Import-PowerShellDataFile ".\config\settings.psd1"
-    return $settings
-}
-
 # Function Log Error
 function Log-Error {
     param(
@@ -52,6 +46,12 @@ function Log-Error {
     }
 }
 
+# Function Load Settings
+function Load-Settings {
+    $settings = Import-PowerShellDataFile ".\config\settings.psd1"
+    return $settings
+}
+
 # Function Save Settings
 function Save-Settings {
     param (
@@ -62,13 +62,7 @@ function Save-Settings {
               "`tDataCacheLocation = `"$dataCacheLocation`"`n" +
               "`tSoundCacheLocation = `"$soundCacheLocation`"`n" +
               "}"
-    $content | Out-File -FilePath ".\settings.psd1" -Encoding UTF8
-}
-
-# Function Set Consolecolor
-function Set-ConsoleColor {
-    [Console]::ForegroundColor = [ConsoleColor]::White
-    [Console]::BackgroundColor = [ConsoleColor]::DarkGray
+    $content | Out-File -FilePath ".\config\settings.psd1" -Encoding UTF8
 }
 
 # Entry Point
