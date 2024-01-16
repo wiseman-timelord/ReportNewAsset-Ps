@@ -25,11 +25,13 @@ Main Menu..
 
 
 
+
                     1. Set Data Cache Location
 
                     2. Set Sound Cache Location
 
                     3. Start Monitoring Assets
+
 
 
 
@@ -41,7 +43,9 @@ Select, Menu Options 1-3, Exit Program=X:
 Monitoring..
 ```
 
-                      -= Monitoring Assets =-
+===========================( SlCacheInfo )============================
+
+Monitoring Assets...
 
 Cache/Sound Dir:
 R:\FireStorm\Data - 4,730.31 MB
