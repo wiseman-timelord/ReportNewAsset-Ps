@@ -1,7 +1,6 @@
 # SlCacheInfo-Ps
 
 ### STATUS: DEVELOPMENT
-The project reached a stage where, breaking from a loop was highlighted to not be possible with, PowerShellCore 7.4, I had to turn to the darkside... .NET, so, with a quick release of a version safe for users of non-windows OS with PowerShellCore, I will then be progressing on to a new era in the PowerShell Programming of WiseMan-TimeLord, that will now be including .NET. So, if you are reading this, you have the "special" version of "SLCacheInfo", that is unable to exit the loop. 
 - break from monitoring loop to return to main menu.
 
 ## DESCRIPTION
@@ -63,7 +62,17 @@ Refresh In 15 Seconds...
 ```
 
 ## USAGE
-Soon...
+1. Download the release (v0.01 For non .NET systems)
+2. Extract to suitable folder.
+3. Run your Second Life viewer, go to the settings and note where the cache files are stored, additionally you may wish to move the data cache, and if you have the option then set the sound cache to a separate dir too.
+4. Run `SlCacheInfo.Bat`, use the menu options 1-2 to set the loctions of the, cache and sound, folders you just noted.
+5. Select option 3 to begin monitoring, when you are done press "m" to return to menu (SlCacheInfo => v0.02), or simply close via the `[X]` in the top right of the console window.
+
+### REQUIREMENTS
+- .NET => 2.0 (SlCacheInfo => v1.02).
+- PowerShell => 3.0.
+- Second Life installation (Only tested on FireStorm).
+- Batch compatibility (For Batch launcher execution).
 
 ### NOTATION
 - In Second Life (SL), managing cache with a 4GB RAM disk presents significant challenges. The RAM disk quickly fills up with assets, and upon logging out, SL automatically deletes sound files. Its possible to tell SL to not do that, however, they will not be re-cached because the data cache is now at capacity. This leads to users having to re-download sounds each time they play??, a situation hinted at by the "SlCacheInfo" showing a sound cache of 0 MB with the data cache at the maximum of 4GB. Efforts to increase the RamDisk are impractical, as then the windows TEMP on the RamDisk will timeout upon booting, as they take longer to load in. Additionally, slimming down the cache isn't straightforward due to SL's asset system, requiring complex procedures like unpacking and repacking assets, making efficient cache management in SL a complex issue with no simple solution, other than having multiple RamDisks loaded in set order.
