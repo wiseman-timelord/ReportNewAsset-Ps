@@ -1,7 +1,7 @@
 # SlCacheInfo-Ps
 
 ### STATUS: DEVELOPMENT
-The project reached a stage where, breaking from a loop was highlighted to not be possible with, PowerShellCore 7.4, I had to turn to .NET, so, with a quick release of a version safe for users of non-windows OS with PowerShellCore, I will then be progressing on to a new era in the PowerShell Programming of WiseMan-TimeLord, that will now be including .NET. So, if you are reading this, you have the "special" version of "SLCacheInfo", that is unable to exit the loop. 
+The project reached a stage where, breaking from a loop was highlighted to not be possible with, PowerShellCore 7.4, I had to turn to the darkside... .NET, so, with a quick release of a version safe for users of non-windows OS with PowerShellCore, I will then be progressing on to a new era in the PowerShell Programming of WiseMan-TimeLord, that will now be including .NET. So, if you are reading this, you have the "special" version of "SLCacheInfo", that is unable to exit the loop. 
 - break from monitoring loop to return to main menu.
 
 ## DESCRIPTION
