@@ -18,7 +18,7 @@ soon...
 Main Menu..
 ```
 
-                      -= Report New Assets =-
+                       -= Sl Cache Info =-
 
 
 
@@ -41,7 +41,7 @@ Select, Menu Options 1-3, Exit Program=X:
 Monitoring
 ```
 
-                      -= Report New Assets =-
+                      -= Monitoring Assets =-
 
  Cache/Sound Dir:
 R:\FireStorm\Data - 4,412.31 MB
