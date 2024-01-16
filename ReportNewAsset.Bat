@@ -22,7 +22,6 @@ if exist ".\Errors-Crash.Log" (
 echo ..Cleaning Done.
 echo ...Initialization Completed.
 echo.
-echo.
 timeout /t 1 /nobreak >nul
 
 :: Launch Script

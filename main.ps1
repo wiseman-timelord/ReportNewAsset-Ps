@@ -1,124 +1,133 @@
-# PowerShell Script for Monitoring Second Life Cache
-
-# Set These Values ONLY
-$dataDir = "R:\FireStorm\Data"
-$soundDir = "R:\FireStorm\Sound"
+# Script: main.ps1
+. ".\scripts\monitor.ps1"
 
 # Variables
+$settings = Import-PowerShellDataFile ".\scripts\settings.psd1"
+$dataDir = $settings.DataCacheLocation
+$soundDir = $settings.SoundCacheLocation
 $objectDir = "$dataDir\objectcache"
 $textureDir = "$dataDir\texturecache"
 $otherAssetsDir = "$dataDir\cache"
-
-# Variables to store the names of the most recent files
+$global:DataCacheLocation = "Default Data Location"
+$global:SoundCacheLocation = "Default Sound Location"
 $latestTexture = $null
 $latestObject = $null
 $latestSound = $null
 $latestOther = $null
 
-# Initialization
-[Console]::ForegroundColor = [ConsoleColor]::White
-[Console]::BackgroundColor = [ConsoleColor]::DarkGray
-[Console]::Clear() 
-Write-Host "`n ReportNewAssets Started....`n`n"
-Start-Sleep -Seconds 1
+# Function Initialize Console
+function Initialize-Console {
+    [Console]::ForegroundColor = [ConsoleColor]::White
+    [Console]::BackgroundColor = [ConsoleColor]::DarkGray
+    [Console]::Clear() 
+    Write-Host "`nReportNewAssets Started....`n`n"
+    Start-Sleep -Seconds 1
+}
 
-# Function to update the latest file name in a category
-function Update-LatestFileName {
-    param (
-        [string]$directory,
-        [string]$extension,
-        [ref]$latestFileName
+# Function Log Error
+function Log-Error {
+    param(
+        [Parameter(Mandatory)]
+        [System.Management.Automation.ErrorRecord]$ErrorRecord
     )
+    $logFilePath = ".\Error-Crash.Log"
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    
+    # Extracting detailed information from the error record
+    $scriptName = $ErrorRecord.InvocationInfo.ScriptName
+    $functionName = $ErrorRecord.InvocationInfo.MyCommand
+    $line = $ErrorRecord.InvocationInfo.ScriptLineNumber
+    $message = $ErrorRecord.Exception.Message
+    $stackTrace = $ErrorRecord.ScriptStackTrace
+    $command = $ErrorRecord.InvocationInfo.Line
 
-    $latestFile = Get-ChildItem -Path $directory -Filter "*$extension" -Recurse | 
-                  Sort-Object LastWriteTime -Descending | 
-                  Select-Object -First 1
+    # Creating the log entry with additional details
+    $logEntry = "${timestamp}: [Script: $scriptName] [Function: $functionName] [Line: $line] [Command: $command] Error: $message`nStack Trace: $stackTrace"
 
-    if ($latestFile) {
-        if (-not $latestFileName.Value -or $latestFile.LastWriteTime -gt $latestFileName.Value.LastWriteTime) {
-            $latestFileName.Value = $latestFile
+    try {
+        Add-Content -Path $logFilePath -Value $logEntry
+    }
+    catch {
+        Write-Host "Error logging failed: $_"
+    }
+}
+
+
+
+# Function Show Menu
+function Show-Menu {
+    $exitMenu = $false
+    while (-not $exitMenu) {
+        Set-ConsoleColor
+        Clear-Host
+        Write-Host "`n                      -= Report New Assets =-`n`n`n`n`n`n"
+        Write-Host "                    1. Set Data Cache Location`n"
+        Write-Host "                    2. Set Sound Cache Location`n"
+        Write-Host "                    3. Start Monitoring Assets`n`n`n`n`n"
+        Write-Host -NoNewline "`nSelect, Menu Options 1-3, Exit Program=X: "
+        $input = Read-Host
+        switch ($input) {
+            "1" { Set-DataCacheLocation }
+            "2" { Set-SoundCacheLocation }
+            "3" { Start-MonitoringAssets }
+            "x" { $exitMenu = $true }
+            default { Write-Host "`nInvalid choice, please try again." -ForegroundColor Red }
         }
     }
 }
 
-# Function to display a single file
-function Display-SingleFile {
-    param ([System.IO.FileInfo]$file)
 
-    if ($file) {
-        $size = "{0:N2} KB" -f ($file.Length / 1KB)
-        "$($file.Name) - $size"
-    }
+# Function Load Settings
+function Load-Settings {
+    $settings = Import-PowerShellDataFile ".\scripts\settings.psd1"
+    return $settings
 }
 
-# Function to setup and start FileSystemWatcher
-function Start-FileSystemWatcher {
+# Function Save Settings
+function Save-Settings {
     param (
-        [string]$path,
-        [string]$filter,
-        [ref]$latestFileName
+        [string]$dataCacheLocation,
+        [string]$soundCacheLocation
     )
-
-    $watcher = New-Object System.IO.FileSystemWatcher
-    $watcher.Path = $path
-    $watcher.Filter = $filter
-    $watcher.IncludeSubdirectories = $true
-    $watcher.EnableRaisingEvents = $true
-
-    Register-ObjectEvent -InputObject $watcher -EventName Created -Action {
-        Write-Host "New file detected: $($Event.SourceEventArgs.FullPath)"
-        Update-LatestFileName -directory $path -extension $filter -latestFileName $latestFileName
-        Display-AssetReport
-    }
+    $content = "@{`n" +
+              "`tDataCacheLocation = `"$dataCacheLocation`"`n" +
+              "`tSoundCacheLocation = `"$soundCacheLocation`"`n" +
+              "}"
+    $content | Out-File -FilePath ".\scripts\settings.psd1" -Encoding UTF8
 }
 
-# Function to display asset report
-function Display-AssetReport {
+
+# Function Set Datacachelocation
+function Set-DataCacheLocation {
+    Write-Host -NoNewline "Enter new Data Cache Location: "
+    $newLocation = Read-Host
+    $settings = Load-Settings
+    Save-Settings -dataCacheLocation $newLocation -soundCacheLocation $settings.SoundCacheLocation
+    Write-Host "Data Cache Location updated."
+}
+
+
+# Function Set Soundcachelocation
+function Set-SoundCacheLocation {
+    Write-Host -NoNewline "Enter new Sound Cache Location: "
+    $newLocation = Read-Host
+    $settings = Load-Settings
+    Save-Settings -dataCacheLocation $settings.DataCacheLocation -soundCacheLocation $newLocation
+    Write-Host "Sound Cache Location updated."
+}
+
+
+# Function Set Consolecolor
+function Set-ConsoleColor {
     [Console]::ForegroundColor = [ConsoleColor]::White
     [Console]::BackgroundColor = [ConsoleColor]::DarkGray
-    [Console]::Clear() 
-
-    Write-Host "`n                      -= Report New Assets =-"
-    Write-Host "`n Cache/Sound:"
-	Write-Host "$dataDir`n$soundDir`n"
-    
-    Write-Host " Textures:"
-    Display-SingleFile -file $global:latestTexture
-
-    Write-Host "`n Objects:"
-    Display-SingleFile -file $global:latestObject
-
-    Write-Host "`n Sounds:"
-    Display-SingleFile -file $global:latestSound
-
-    Write-Host "`n Other:"
-    Display-SingleFile -file $global:latestOther
-	
-	Write-Host "`n Refresh In 15 Seconds..."
 }
-
-# Update latest file names initially
-function Initialize-LatestFileNames {
-    Update-LatestFileName -directory $textureDir -extension ".texture" -latestFileName ([ref]$global:latestTexture)
-    Update-LatestFileName -directory $objectDir -extension ".slc" -latestFileName ([ref]$global:latestObject)
-    Update-LatestFileName -directory $soundDir -extension ".dsf" -latestFileName ([ref]$global:latestSound)
-    Update-LatestFileName -directory $otherAssetsDir -extension ".asset" -latestFileName ([ref]$global:latestOther)
-}
-
-
-# Start monitoring directories
-function Start-DirectoryMonitoring {
-    Start-FileSystemWatcher -path $textureDir -filter "*.texture" -category "Textures"
-    Start-FileSystemWatcher -path $objectDir -filter "*.slc" -category "Objects"
-    Start-FileSystemWatcher -path $soundDir -filter "*.dsf" -category "Sounds"
-    Start-FileSystemWatcher -path $otherAssetsDir -filter "*.asset" -category "Other"
-}
-
 
 # Entry Point
-Initialize-LatestFileNames
-Start-DirectoryMonitoring
-Display-AssetReport
-while ($true) {    
-    Start-Sleep -Seconds 15
+try {
+    Initialize-Console
+    Show-Menu # This will display the menu and handle user inputs
+} catch {
+    Log-Error -ErrorRecord $_
+    Write-Host "An unexpected error occurred."
 }
