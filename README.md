@@ -1,11 +1,11 @@
-# ReportNewAsset-Ps
+# SlCacheInfo-Ps
 
-### STATUS: ALPHA
-Working on it, its going to be a quick one, done in half a day.
+### STATUS: DEVELOPMENT
+The project reached a stage where, breaking from a loop was highlighted to not be possible with, PowerShellCore 7.4, I had to turn to .NET, so, with a quick release of a version safe for users of non-windows OS with PowerShellCore, I will then be progressing on to a new era in the PowerShell Programming of WiseMan-TimeLord, that will now be including .NET. So, if you are reading this, you have the "special" version of "SLCacheInfo", that is unable to exit the loop. 
 - break from monitoring loop to return to main menu.
 
 ## DESCRIPTION
-ReportNewAsset is a tool to monitor for, new and updated, files in the cache of specifically "FireStorm" a "Second Life" viewer application, however, it may work with other veiewers, that utilize the same cache format, mainly the, file extensions and folder structure, in the cache. This is good for, "data visualization" and "cache analysis", though due to checking multiple things to do with file systems upon a repeating 15 second basis, its not advised to let it run upon an ongoing basis, unless that is extremely important to some task you have to do. ReportNewAsset is perfect for determining how large your SL cache should be, albeit overkill and a intellectual curiosity, but it is also somewhat good for getting some, metrics and real information, of, how much and what, data is being downloaded, instead of just the normal download data rate readout.   
+SlCacheInfo is a tool to monitor for, new and updated, files in the cache of specifically "FireStorm" a "Second Life" viewer application, however, it may work with other veiewers, that utilize the same cache format, mainly the, file extensions and folder structure, in the cache. This is good for, "data visualization" and "cache analysis", though due to checking multiple things to do with file systems upon a repeating 15 second basis, its not advised to let it run upon an ongoing basis, unless that is extremely important to some task you have to do. SlCacheInfo is perfect for determining how large your SL cache should be, albeit overkill and a intellectual curiosity, but it is also somewhat good for getting some, metrics and real information, of, how much and what, data is being downloaded, instead of just the normal download data rate readout.   
 
 ### FEATURES
 - **Customizable Cache Locations**: Set custom paths for different Second Life cache data types.
@@ -66,7 +66,7 @@ Refresh In 15 Seconds...
 Soon...
 
 ### NOTATION
-- In Second Life (SL), managing cache with a 4GB RAM disk presents significant challenges. The RAM disk quickly fills up with assets, and upon logging out, SL automatically deletes sound files. Its possible to tell SL to not do that, however, they will not be re-cached because the data cache is now at capacity. This leads to users having to re-download sounds each time they play??, a situation hinted at by the "ReportNewAsset" showing a sound cache of 0 MB with the data cache at the maximum of 4GB. Efforts to increase the RamDisk are impractical, as then the windows TEMP on the RamDisk will timeout upon booting, as they take longer to load in. Additionally, slimming down the cache isn't straightforward due to SL's asset system, requiring complex procedures like unpacking and repacking assets, making efficient cache management in SL a complex issue with no simple solution, other than having multiple RamDisks loaded in set order.
+- In Second Life (SL), managing cache with a 4GB RAM disk presents significant challenges. The RAM disk quickly fills up with assets, and upon logging out, SL automatically deletes sound files. Its possible to tell SL to not do that, however, they will not be re-cached because the data cache is now at capacity. This leads to users having to re-download sounds each time they play??, a situation hinted at by the "SlCacheInfo" showing a sound cache of 0 MB with the data cache at the maximum of 4GB. Efforts to increase the RamDisk are impractical, as then the windows TEMP on the RamDisk will timeout upon booting, as they take longer to load in. Additionally, slimming down the cache isn't straightforward due to SL's asset system, requiring complex procedures like unpacking and repacking assets, making efficient cache management in SL a complex issue with no simple solution, other than having multiple RamDisks loaded in set order.
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
