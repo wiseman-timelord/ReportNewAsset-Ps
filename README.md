@@ -2,8 +2,11 @@
 
 ### STATUS: ALPHA
 Working on it, its going to be a quick one, done in half a day.
-- fix monitor since refractoring of code
-- break from monitoring loop to return to main menu
+- fix monitor since refractoring of code, after this upload.
+- break from monitoring loop to return to main menu.
+
+## DESCRIPTION
+soon...
 
 ### FEATURES
 - **Customizable Cache Locations**: Set custom paths for different Second Life cache data types.
