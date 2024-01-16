@@ -15,10 +15,13 @@ SlCacheInfo is a tool to monitor for, new and updated, files in the cache of "Se
 ### PREVIEW
 Main Menu..
 ```
+        ____  _  ____           _          ___        __
+       / ___|| |/ ___|____  ___| |__   ___|_ _|____  / _| ___
+       \___ \| | |   / _  |/ __|  _ \ / _ \| ||  _ \| |_ / _ \
+        ___) | | |__| (_| | (__| | | |  __/| || | | |  _| (_) |
+       |____/|_|\____\__,_|\___|_| |_|\___|___|_| |_|_|  \___/
 
-                          -= Main Menu =-
-
-
+===========================( SlCacheInfo )============================
 
 
 
@@ -31,8 +34,7 @@ Main Menu..
 
 
 
-
-
+----------------------------------------------------------------------
 Select, Menu Options 1-3, Exit Program=X:
 
 ```
@@ -57,7 +59,8 @@ No Relevantly Themed Files Exist!
 Newest Other Assets:
 sl_cache_ed11ad84-e720-f4ee-351e-0afda90d90bd_0.asset - 1.89 KB
 
-Refresh In 15 Seconds...
+----------------------------------------------------------------------
+Refresh In 15 Seconds, Press M To Return To Menu...
 
 ```
 
