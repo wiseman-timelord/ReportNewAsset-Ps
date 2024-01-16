@@ -1,5 +1,7 @@
 # ReportNewAsset-Ps
-A cache visualization tool for Second Life (FireStorm, possibly others viewers too)
+
+### STATUS: ALPHA
+Working on it, its going to be a quick one, done in half a day.
 
 ### FEATURES
 - **Customizable Cache Locations**: Set custom paths for different Second Life cache data types.
