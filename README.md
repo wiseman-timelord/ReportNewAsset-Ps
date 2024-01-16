@@ -1,7 +1,7 @@
 # SlCacheInfo-Ps
 
 ### STATUS: DEVELOPMENT
-- break from monitoring loop to return to main menu.
+- break from monitoring loop to return to main menu (requires .net 2.0, from this version forwards).
 
 ## DESCRIPTION
 SlCacheInfo is a tool to monitor for, new and updated, files in the cache of specifically "FireStorm" a "Second Life" viewer application, however, it may work with other veiewers, that utilize the same cache format, mainly the, file extensions and folder structure, in the cache. This is good for, "data visualization" and "cache analysis", though due to checking multiple things to do with file systems upon a repeating 15 second basis, its not advised to let it run upon an ongoing basis, unless that is extremely important to some task you have to do. SlCacheInfo is perfect for determining how large your SL cache should be, albeit overkill and a intellectual curiosity, but it is also somewhat good for getting some, metrics and real information, of, how much and what, data is being downloaded, instead of just the normal download data rate readout.   
