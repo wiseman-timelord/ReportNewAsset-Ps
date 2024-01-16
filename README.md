@@ -2,7 +2,7 @@
 
 ### STATUS: ALPHA
 Working on it, its going to be a quick one, done in half a day.
-- fix monitor since refractoring of code, after this upload.
+- fix monitor, broke since refractoring of code.
 - break from monitoring loop to return to main menu.
 
 ## DESCRIPTION
