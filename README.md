@@ -2,10 +2,10 @@
 A cache visualization tool for Second Life (FireStorm, possibly others viewers too)
 
 ### FEATURES
-- **Customizable Cache Locations**: Allows setting of specific paths for different types of Second Life cache data, enhancing flexibility and user-specific configuration.
-- **Dynamic File Monitoring**: Utilizes `FileSystemWatcher` for real-time monitoring of directories, enabling immediate detection of new file creations.
-- **Automated File Tracking**: Maintains up-to-date information on the most recent files in various asset categories like Textures, Objects, Sounds, and Others.
-- **Real-time Asset Reporting**: Dynamically displays the latest file for each asset type, including details like file name and size, ensuring the user is always informed of the latest updates.
+- **Customizable Cache Locations**: Set custom paths for different Second Life cache data types.
+- **Dynamic File Monitoring**: Real-time directory monitoring for new file creations using FileSystemWatcher.
+- **Automated File Tracking**: Updates and tracks the latest files in categories like Textures, Objects, Sounds, and Others.
+- **Real-time Asset Reporting**: Displays updated information of the latest files, including names and sizes.
 
 ### PREVIEW
 First Version.
