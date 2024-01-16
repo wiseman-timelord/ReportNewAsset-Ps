@@ -18,7 +18,7 @@ soon...
 Main Menu..
 ```
 
-                       -= Sl Cache Info =-
+                       -= Report New Asset =-
 
 
 
