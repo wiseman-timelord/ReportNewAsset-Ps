@@ -11,7 +11,7 @@ SlCacheInfo is a tool to monitor for, new and updated, files in the cache of "Se
 - **Dynamic File Monitoring**: Real-time directory monitoring for new file creations using FileSystemWatcher.
 - **Automated File Tracking**: Updates and tracks the latest files in categories like Textures, Objects, Sounds, and Others.
 - **Real-time Asset Reporting**: Displays updated information of the latest files, including names and sizes.
-- **Break From Loop**: => v1.03 requires .NET => v2.0, but features a break from loop ability on monitoring page.
+- **Break From Loop**: requires .NET => v2.0, but features a break from loop ability on monitoring page.
 
 ### PREVIEW
 Main Menu..
@@ -70,14 +70,14 @@ Refresh In 15 Seconds, Press M To Return To Menu...
 ```
 
 ## USAGE
-1. Download the release (SlCacheInfo v0.02 For non .NET systems).
+1. Download the release.
 2. Extract to suitable folder.
 3. Run your Second Life viewer, go to the settings and note where the cache files are stored, additionally you may wish to move the data cache, and if you have the option then set the sound cache to a separate dir too.
 4. Run `SlCacheInfo.Bat`, use the menu options 1-2 to set the loctions of the, cache and sound, folders you just noted.
 5. Select option 3 to begin monitoring, when you are done press "m" to return to menu (SlCacheInfo => v0.03), or simply close via the `[X]` in the top right of the console window.
 
 ### REQUIREMENTS
-- .NET => 2.0 (SlCacheInfo => v1.03).
+- .NET => 2.0
 - PowerShell => 3.0.
 - Second Life installation (Only tested on FireStorm).
 - Batch compatibility (For Batch launcher execution).
