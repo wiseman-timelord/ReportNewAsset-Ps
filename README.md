@@ -83,7 +83,7 @@ Refresh In 15 Seconds, Press M To Return To Menu...
 - Batch compatibility (For Batch launcher execution).
 
 ### NOTATION
-- In conclusion, the correct configuration for ramdisks in SL would be a 12GB ramdisk, with, 10GB (max) for Cache and 1GB for Sound, leaving 1GB for clearence. For a guide to using RamDisks including a script for automatically, mounting and unmounting, a Ramdrive for Second Life, [heres what I have put together](https://github.com/wiseman-timelord/RamDiskTempHelp-Ba).
+- In conclusion, the correct configuration for ramdisks in SL would be a 12GB ramdisk, with, 10GB (max) for Cache and 1GB for Sound, leaving 1GB for clearence, and obviously logs do not go on the ramdisk. For a guide to using RamDisks including a script for automatically, mounting and unmounting, a Ramdrive for Second Life, [heres what I have put together](https://github.com/wiseman-timelord/RamDiskTempHelp-Ba).
 
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
