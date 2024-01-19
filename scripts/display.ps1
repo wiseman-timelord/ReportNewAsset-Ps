@@ -20,11 +20,13 @@ function Show-Menu {
     while (-not $exitMenu) {
         Set-ConsoleColor
         Clear-Host
-        Write-Host "`n                          -= Main Menu =-`n`n`n`n`n`n"
-        Write-Host "                    1. Set Data Cache Location`n"
+        Show-AsciiArt
+		Show-Title
+        Write-Host "`n`n`n                    1. Set Data Cache Location`n"
         Write-Host "                    2. Set Sound Cache Location`n"
         Write-Host "                    3. Start Monitoring Assets`n`n`n`n`n"
-        Write-Host -NoNewline "`nSelect, Menu Options 1-3, Exit Program=X: "
+        Show-Divider
+		Write-Host -NoNewline "Select, Menu Options 1-3, Exit Program=X: "
         $input = Read-Host
         switch ($input) {
             "1" { Set-DataCacheLocation }
@@ -40,7 +42,8 @@ function Show-Menu {
 function Display-AssetReport {
     Set-ConsoleColor
     Clear-Host
-    Write-Host "`n                      -= Monitoring Assets =-"
+    Show-Title
+	Write-Host "Monitoring Assets..."
     Write-Host "`nCache/Sound Dir:"
     Write-Host "$dataDir - $(Get-DirectorySize -directoryPath $dataDir)"
     Write-Host "$soundDir - $(Get-DirectorySize -directoryPath $soundDir)"
@@ -56,17 +59,10 @@ function Display-AssetReport {
 
     Write-Host "`nNewest Other Assets:"
     Display-SingleFile -file $global:latestOther
-
-    Write-Host "`nRefresh In 15 Seconds, Press M To Return To Menu..."
-}
-
-# Function Set Soundcachelocation
-function Set-SoundCacheLocation {
-    Write-Host -NoNewline "Enter new Sound Cache Location: "
-    $newLocation = Read-Host
-    $settings = Load-Settings
-    Save-Settings -dataCacheLocation $settings.DataCacheLocation -soundCacheLocation $newLocation
-    Write-Host "Sound Cache Location updated."
+	
+	Write-Host ""
+    Show-Divider
+    Write-Host "Refresh In 15 Seconds, Press M To Return To Menu..."
 }
 
 # Function Set Datacachelocation
@@ -75,8 +71,20 @@ function Set-DataCacheLocation {
     $newLocation = Read-Host
     $settings = Load-Settings
     Save-Settings -dataCacheLocation $newLocation -soundCacheLocation $settings.SoundCacheLocation
+    $global:settings = Load-Settings # Reload settings
     Write-Host "Data Cache Location updated."
 }
+
+# Function Set Soundcachelocation
+function Set-SoundCacheLocation {
+    Write-Host -NoNewline "Enter new Sound Cache Location: "
+    $newLocation = Read-Host
+    $settings = Load-Settings
+    Save-Settings -dataCacheLocation $settings.DataCacheLocation -soundCacheLocation $newLocation
+    $global:settings = Load-Settings # Reload settings
+    Write-Host "Sound Cache Location updated."
+}
+
 
 # Function Display Singlefile
 function Display-SingleFile {
