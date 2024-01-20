@@ -51,7 +51,8 @@ Monitoring..
 Monitoring Assets...
 
 Cache/Sound Dir:
-General = 3,482.32MB, Media = 14.43MB, Objects = 13.42MB, Textures = 929.80MB, Sounds = 121.09MB
+General = 3,482.32MB, Media = 14.43MB, Objects = 13.42MB, Textures = 9
+29.80MB, Sounds = 121.09MB
 
 Newest Texture Assets:
 d53da781-56c5-4f78-b308-04c27c05ab2b.texture - 1.41 KB
