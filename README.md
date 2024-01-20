@@ -8,7 +8,7 @@ SlCacheInfo works correctly. Possible upgrades are...
 SlCacheInfo is a tool to monitor for, new and updated, files in the cache of "Second Life" viewers, through specifically, developed for and tested on, "FireStorm", however, it may work with other viewers, that utilize the same cache format, mainly the, file extensions and folder structure, in the cache. This is good for, "data visualization" and "cache analysis", though due to checking multiple things to do with file systems upon a repeating 15 second basis. SlCacheInfo is perfect for determining how large your, SL cache/sound allocations and ramdisk, should be, its also somewhat effective as a data visualization tool. 
 
 ### FEATURES
-- **Customizable Cache Locations**: Set custom paths for different Second Life cache data types.
+- **Customizable Cache Locations**: Set custom paths for Second Life, Cache AND Sound, folders, which  also means, in the viewer set them to 2 differing locations.
 - **Dynamic File Monitoring**: Real-time directory monitoring for new file creations using FileSystemWatcher.
 - **Automated File Tracking**: Updates and tracks the latest files in categories like Textures, Objects, Sounds, and Others.
 - **Real-time Asset Reporting**: Displays updated information of the latest files, including names and sizes.
