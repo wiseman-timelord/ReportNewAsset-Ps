@@ -3,7 +3,7 @@
 ### STATUS: WORKING
 SlCacheInfo works correctly. Possible upgrades are...
 - better breakdown of space usage for folders, "cache\cache", "cache\cef_cache", "cache\objectcache", "cache\texturecache".
-- use of firestorm settings file, thus only requiring to set the location of the settings folder on one option on the menu.
+- use of firestorm settings file, thus only requiring to set the location of the settings folder on one option on the menu, or better yet if possible then detection of location.
 
 ## DESCRIPTION
 SlCacheInfo is a tool to monitor for, new and updated, files in the cache of "Second Life" viewers, through specifically, developed for and tested on, "FireStorm", however, it may work with other viewers, that utilize the same cache format, mainly the, file extensions and folder structure, in the cache. This is good for, "data visualization" and "cache analysis", though due to checking multiple things to do with file systems upon a repeating 15 second basis. SlCacheInfo is perfect for determining how large your, SL cache/sound allocations and ramdisk, should be, its also somewhat effective as a data visualization tool. 
