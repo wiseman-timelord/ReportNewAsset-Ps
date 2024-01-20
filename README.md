@@ -2,7 +2,6 @@
 
 ### STATUS: WORKING
 SlCacheInfo works correctly. Possible upgrades are...
-- better breakdown of space usage for folders, "cache\cache", "cache\cef_cache", "cache\objectcache", "cache\texturecache".
 - use of firestorm settings file, thus only requiring to set the location of the settings folder on one option on the menu, or better yet if possible then detection of location.
 
 ## DESCRIPTION
