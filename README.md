@@ -49,24 +49,23 @@ Monitoring..
 Monitoring Assets...
 
 Cache/Sound Dir:
-General = 3,482.32MB, Media = 14.46MB, Objects = 15.72MB, Textures = 9
-29.87MB, Sounds = 121.09MB
+General = 3,486.12MB, Media = 14.74MB, Objects = 15.75MB, Textures = 9
+39.70MB, Sounds = 122.74MB
 
 Newest Texture Assets:
-0a4f277e-09e7-a5c4-1792-1ee9ee89b55e.texture = 76.13KB
+a3035c53-34d8-9b34-e1af-dedc9ecd33a2.texture = 30.66KB
 
 Newest Object Assets:
-objects_943_945.slc = 2,353.70KB
+objects_943_945.slc = 2,387.80KB
 
 Newest Sound Assets:
-bcb6dd68-1d01-5a32-9036-612c797373f9.dsf = 703.75KB
+7982668c-5913-fa38-929c-0eeafdd79a1d.dsf = 839.54KB
 
 Newest Other Assets:
-sl_cache_cae7870a-4889-b27e-aa1a-eacd752f8dbc_0.asset = 23.37KB
+sl_cache_9790c21b-ced4-5b28-930c-ac8ff83e6c61_0.asset = 140.41KB
 
 ----------------------------------------------------------------------
 Refresh In 15 Seconds, Press M To Return To Menu...
-
 ```
 
 ## USAGE
@@ -83,7 +82,7 @@ Refresh In 15 Seconds, Press M To Return To Menu...
 - Batch compatibility (For Batch launcher execution).
 
 ### NOTATION
-- In conclusion, the correct configuration for ramdisks in SL would be a 15GB ramdisk, with, 10GB (max) for Cache and 4GB for Assets, leaving 1GB for clearence, and obviously logs do not go on the ramdisk. 
+- In conclusion, there are 2 settings for cache in SL, Textures and Assets. When I had 4576MB of cache, 939MB of that was Textures, so one would assume the remainder of 3637MB was "Assets", hence, (939/3637)*9984=2577 (9986 is max), means the optimal settings for, texture cache is 2577MB and asset cache is 9984MB, and so the correct size for the ramdisk would be relatingly 12.75-13GB, so as to give some clearence.
 - For a guide to using RamDisks including a script for automatically, mounting and unmounting, a Ramdrive for Second Life, [heres what I have put together](https://github.com/wiseman-timelord/RamDiskTempHelp-Ba).
 
 ### DEVELOPMENT
