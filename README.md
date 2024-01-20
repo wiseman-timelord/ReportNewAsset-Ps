@@ -82,7 +82,7 @@ Refresh In 15 Seconds, Press M To Return To Menu...
 - Batch compatibility (For Batch launcher execution).
 
 ### NOTATION
-- In conclusion, there are 2 settings for cache in SL, Textures and Assets. When I had 4576MB of cache, 939MB of that was Textures, so one would assume the remainder of 3637MB was "Assets", hence, (939/3637)*9984=2577 (9986 is max), means the optimal settings for, texture cache is 2577MB and asset cache is 9984MB, and so the correct size for the ramdisk would be relatingly 12.75-13GB, so as to give some clearence.
+- In conclusion, there are 2 settings for cache in FireStorm, Textures and Assets. When I had 4576MB of cache, 939MB of that was Textures, so one would assume the remainder of 3637MB was "Assets", hence, (939/3637)*9984=2577 (9986 is max), means the optimal settings for, texture cache is 2577MB and asset cache is 9984MB, and so the correct size for the ramdisk would be relatingly 12.75-13GB, so as to give some clearence.
 - For a guide to using RamDisks including a script for automatically, mounting and unmounting, a Ramdrive for Second Life, [heres what I have put together](https://github.com/wiseman-timelord/RamDiskTempHelp-Ba).
 
 ### DEVELOPMENT
