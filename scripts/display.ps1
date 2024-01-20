@@ -66,12 +66,20 @@ function Display-AssetReport {
             $size = Get-DirectorySize -directoryPath $dirPath
             $label = $dirLabels[$dir]
             $dirSizes += "$label = ${size}MB"
+        } else {
+            $label = $dirLabels[$dir]
+            $dirSizes += "$label = Not Found!"
         }
     }
 
     # Adding the Sound directory size
-    $soundSize = Get-DirectorySize -directoryPath $soundDir
-    $dirSizes += "Sounds = ${soundSize}MB"
+    $soundPath = $soundDir
+    if (Test-Path $soundPath) {
+        $soundSize = Get-DirectorySize -directoryPath $soundPath
+        $dirSizes += "Sounds = ${soundSize}MB"
+    } else {
+        $dirSizes += "Sounds = Not Found!"
+    }
 
     # Displaying the directory sizes in the specified order
     $dirSizesString = $dirSizes -join ', '
@@ -94,6 +102,7 @@ function Display-AssetReport {
     Show-Divider
     Write-Host "Refresh In 15 Seconds, Press M To Return To Menu..."
 }
+
 
 
 # Function Set Datacachelocation
@@ -121,8 +130,8 @@ function Set-SoundCacheLocation {
 function Display-SingleFile {
     param ([System.IO.FileInfo]$file)
     if ($file) {
-        $size = "{0:N2} KB" -f ($file.Length / 1KB)
-        "$($file.Name) - $size"
+        $size = "{0:N2}KB" -f ($file.Length / 1KB)
+        "$($file.Name) = $size"
     } else {
         "No Relevantly Themed Files Exist!"
     }
