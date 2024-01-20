@@ -1,4 +1,4 @@
 @{
-	DataCacheLocation = "R:\FireStorm\Data"
-	SoundCacheLocation = "R:\FireStorm\Sound"
+	DataCacheLocation = "S:\Cache"
+	SoundCacheLocation = "S:\Sound"
 }

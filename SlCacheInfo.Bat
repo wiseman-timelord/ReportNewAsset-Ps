@@ -1,5 +1,5 @@
 @echo off
-mode 70,21
+mode 70,24
 color 80
 title ReportNewAssets
 echo.

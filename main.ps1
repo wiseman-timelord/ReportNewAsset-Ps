@@ -3,6 +3,7 @@
 # Imports
 . ".\scripts\monitor.ps1"
 . ".\scripts\display.ps1"
+. ".\scripts\artwork.ps1"
 
 # Variables
 $settings = Import-PowerShellDataFile ".\config\settings.psd1"

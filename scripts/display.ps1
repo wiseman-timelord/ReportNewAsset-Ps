@@ -43,11 +43,41 @@ function Display-AssetReport {
     Set-ConsoleColor
     Clear-Host
     Show-Title
-	Write-Host "Monitoring Assets..."
+    Write-Host "Monitoring Assets..."
+
     Write-Host "`nCache/Sound Dir:"
-    Write-Host "$dataDir - $(Get-DirectorySize -directoryPath $dataDir)"
-    Write-Host "$soundDir - $(Get-DirectorySize -directoryPath $soundDir)"
-    
+
+    # Map directory names to labels
+    $dirLabels = @{
+        "cache" = "General"
+        "cef_cache" = "Media"
+        "objectcache" = "Objects"
+        "texturecache" = "Textures"
+    }
+
+    # Define an ordered list of keys
+    $orderedKeys = @("cache", "cef_cache", "objectcache", "texturecache")
+
+    # Constructing the directory size string
+    $dirSizes = @()
+    foreach ($dir in $orderedKeys) {
+        $dirPath = Join-Path $dataDir $dir
+        if (Test-Path $dirPath) {
+            $size = Get-DirectorySize -directoryPath $dirPath
+            $label = $dirLabels[$dir]
+            $dirSizes += "$label = ${size}MB"
+        }
+    }
+
+    # Adding the Sound directory size
+    $soundSize = Get-DirectorySize -directoryPath $soundDir
+    $dirSizes += "Sounds = ${soundSize}MB"
+
+    # Displaying the directory sizes in the specified order
+    $dirSizesString = $dirSizes -join ', '
+    Write-Host $dirSizesString
+
+    # Display newest assets
     Write-Host "`nNewest Texture Assets:"
     Display-SingleFile -file $global:latestTexture
 
@@ -59,11 +89,12 @@ function Display-AssetReport {
 
     Write-Host "`nNewest Other Assets:"
     Display-SingleFile -file $global:latestOther
-	
-	Write-Host ""
+
+    Write-Host ""
     Show-Divider
     Write-Host "Refresh In 15 Seconds, Press M To Return To Menu..."
 }
+
 
 # Function Set Datacachelocation
 function Set-DataCacheLocation {
@@ -103,6 +134,8 @@ function Get-DirectorySize {
         [string]$directoryPath
     )
     $totalSize = (Get-ChildItem -Path $directoryPath -Recurse -File | Measure-Object -Property Length -Sum).Sum / 1MB
-    return "{0:N2} MB" -f $totalSize
+    return "{0:N2}" -f $totalSize  # Removed "MB" from here
 }
+
+
 
