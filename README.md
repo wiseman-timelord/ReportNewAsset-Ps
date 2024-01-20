@@ -49,20 +49,19 @@ Monitoring..
 Monitoring Assets...
 
 Cache/Sound Dir:
-General = 3,482.32MB, Media = 14.46MB, Objects = 15.72MB, Textures = 9
-29.87MB, Sounds = 121.09MB
+General = 3,482.32MB, Media = 14.46MB, Objects = 15.72MB, Textures = 929.87MB, Sounds = 121.09MB
 
 Newest Texture Assets:
-0a4f277e-09e7-a5c4-1792-1ee9ee89b55e.texture = 76.13 KB
+0a4f277e-09e7-a5c4-1792-1ee9ee89b55e.texture = 76.13KB
 
 Newest Object Assets:
-objects_943_945.slc = 2,353.70 KB
+objects_943_945.slc = 2,353.70KB
 
 Newest Sound Assets:
-bcb6dd68-1d01-5a32-9036-612c797373f9.dsf = 703.75 KB
+bcb6dd68-1d01-5a32-9036-612c797373f9.dsf = 703.75KB
 
 Newest Other Assets:
-sl_cache_f22fed8b-a5ed-2c93-64d5-bdd8b93c889f_0.asset = 0.96 KB
+sl_cache_cae7870a-4889-b27e-aa1a-eacd752f8dbc_0.asset = 23.37KB
 
 ----------------------------------------------------------------------
 Refresh In 15 Seconds, Press M To Return To Menu...
