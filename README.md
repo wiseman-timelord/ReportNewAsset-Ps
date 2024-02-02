@@ -1,4 +1,4 @@
-# SlCacheInfo-Ps
+# SlCacheInfo
 
 ### STATUS: WORKING
 SlCacheInfo works correctly.
